@@ -1,0 +1,20 @@
+.what-we-believe {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: flex-end;
+
+  h2 {
+    // flex: 0 0 33%;
+    font-size: 72px;
+    font-family: sans-serif;
+    margin-right: 30px;
+
+  }
+
+  &__content {
+    font-size: 24px;
+    line-height: 1.5;
+    width: 500px;
+  }
+}
