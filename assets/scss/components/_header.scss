@@ -7,7 +7,7 @@
   padding: 10px;
   max-width: 100%;
   position: relative;
-  z-index: 5;
+  z-index: 20;
   h1 {
     color: white;
     margin: 0;
@@ -21,7 +21,7 @@
 
 nav {
   // display: none;
-  background-color: #222;
+  background-color: rgba(#222, .9);
   position: absolute;
   top: 100%;
   right: 0;

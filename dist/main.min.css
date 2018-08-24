@@ -343,9 +343,6 @@ template {
 * {
   box-sizing: border-box; }
 
-body {
-  min-height: 100vh; }
-
 a, p, li {
   font-family: sans-serif;
   margin-top: 0;
@@ -357,6 +354,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #222;
   font-family: sans-serif; }
 
+body {
+  min-height: 100vh; }
+
 .header {
   background-color: #222;
   display: flex;
@@ -365,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px;
   max-width: 100%;
   position: relative;
-  z-index: 5; }
+  z-index: 20; }
   .header h1 {
     color: white;
     margin: 0; }
@@ -374,7 +374,7 @@ h1, h2, h3, h4, h5, h6 {
         display: none; } }
 
 nav {
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.9);
   position: absolute;
   top: 100%;
   right: 0;
