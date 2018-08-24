@@ -24,7 +24,7 @@ gulp.task('styles', () => {
     gulp.src('./node_modules/normalize.css/normalize.css')
       .pipe(sourcemaps.init()),
     // Add other external stylesheets to concatenate here with gulp.src().
-    gulp.src('assets/scss/main.scss')
+    gulp.src('assets/scss/styles.scss')
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
   )
