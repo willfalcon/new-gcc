@@ -92,7 +92,7 @@ gulp.task('scripts', () => {
       // Add transformation tasks to the pipeline here.
       .pipe(babel())
       .pipe(gulp.dest('./dist/'))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
     // Start piping stream to tasks!

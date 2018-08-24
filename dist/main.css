@@ -339,3 +339,55 @@ template {
 [hidden] {
   display: none;
 }
+
+body {
+  min-height: 100vh; }
+
+a, p, li {
+  font-family: sans-serif;
+  margin-top: 0;
+  color: #222; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #222;
+  font-family: sans-serif; }
+
+.header {
+  background-color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; }
+  .header h1 {
+    color: white;
+    margin: 0; }
+  .header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; }
+    .header nav ul li {
+      color: white;
+      margin: 0 5px;
+      text-transform: uppercase;
+      font-size: 16px; }
+
+.what-we-believe {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: flex-end; }
+  .what-we-believe h2 {
+    font-size: 72px;
+    font-family: sans-serif;
+    margin-right: 30px; }
+  .what-we-believe__content {
+    font-size: 24px;
+    line-height: 1.5;
+    width: 500px; }
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr; }
