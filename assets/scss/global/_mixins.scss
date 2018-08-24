@@ -1,0 +1,5 @@
+@mixin responsive($break: 768px) {
+  @media (min-width: $break) {
+    @content;
+  }
+}

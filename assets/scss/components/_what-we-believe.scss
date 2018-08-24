@@ -1,12 +1,20 @@
 .what-we-believe {
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  justify-content: flex-end;
+  padding: 10px;
+  @include responsive {
+    padding: 50px;    
+  }
 
+  justify-content: flex-end;
+  max-width: 100%;
   h2 {
     // flex: 0 0 33%;
-    font-size: 72px;
+    font-size: 52px;
+    @include responsive {
+      font-size: 72px;
+    }
+
     font-family: sans-serif;
     margin-right: 30px;
     color: white;
@@ -17,6 +25,7 @@
     line-height: 1.5;
     width: 500px;
     color: white;
+    max-width: 100%;
     * {color: white;}
   }
 }

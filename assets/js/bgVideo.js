@@ -14,24 +14,36 @@ module.exports = () => {
       width: styles.width
     } || new Error('Not a valid style prop!');
   }
+
+  function sizeVideo(videoEl) {
+    const styles = getWindow(document.querySelector('.main-container'));
+    const headerStyles = getWindow(document.querySelector('.header'));
+    const { height, width } = styles;
+    console.log(parseInt(width) / parseInt(height));
+    if (parseInt(width) / parseInt(height) < 16 / 9) {
+      console.log('height greater than width');
+      videoEl.style.height = `100%`;
+      videoEl.style.width = 'auto';
+    } else {
+      console.log('width greater than height');
+      videoEl.style.width = '100%';
+      videoEl.style.height = 'auto';
+    }
+  }
+
+
+
   const videoTag = getVideoTag('GCC_Random_BG');
 
   const videoWrapper = document.getElementById('video');
 
-  const styles = getWindow(document.querySelector('body'));
-  const headerStyles = getWindow(document.querySelector('.header'));
-  console.log(styles.height);
-  const { height, width } = styles;
-
   videoWrapper.innerHTML = videoTag;
 
   const videoEl = document.querySelector('#video video');
+  sizeVideo(videoEl);
 
-    if (height > width) {
-      videoEl.style.height = `100%`;
-      videoEl.style.width = 'auto';
-    }
-    console.log(parseInt(height) - parseInt(headerStyles.height));
-
+  window.addEventListener('resize', () => {
+    sizeVideo(videoEl);
+  });
 
 }

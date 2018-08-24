@@ -5,21 +5,108 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  max-width: 100%;
+  position: relative;
+  z-index: 5;
   h1 {
     color: white;
     margin: 0;
+    br {
+      @include responsive {
+        display: none;
+      }
+    }
   }
-  nav {
-    ul {
-      list-style: none;
+}
+
+nav {
+  // display: none;
+  background-color: #222;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translateX(100%);
+  .open & {
+    transform: translateX(0);
+  }
+  transition: .25s;
+  @include responsive {
+    position: static;
+    transform: translateX(0);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include responsive {
+      flex-flow: row nowrap;
       padding: 0;
-      margin: 0;
-      display: flex;
-      li {
-        color: white;
+
+    }
+    li {
+      text-align: right;
+      flex: 100%;
+      color: white;
+      margin: 10px 5px;
+      text-transform: uppercase;
+      font-size: 16px;
+      @include responsive {
+        text-align: initial;
         margin: 0 5px;
-        text-transform: uppercase;
-        font-size: 16px;
+        flex: initial;
+      }
+    }
+  }
+}
+
+.navbar-toggler {
+  display: block;
+  width: 60px;
+  height: 50px;
+  background: transparent;
+  border: 0;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+
+  @include responsive {
+    display: none;
+  }
+
+  $spanpos: 24px;
+  span {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 35px;
+    background: white;
+    left: 12px;
+    border-radius: 1px;
+    transition: .25s;
+    &:nth-child(1) {
+      top: $spanpos - 8px;
+      transform: rotate(0);
+      .open & {
+        transform: rotate(45deg);
+        top: $spanpos;
+      }
+    }
+    &:nth-child(2) {
+      top: $spanpos;
+      opacity: 1;
+      .open & {
+        opacity: 0;
+      }
+    }
+    &:nth-child(3) {
+      top: $spanpos + 8px;
+      transform: rotate(0);
+      .open & {
+        transform: rotate(-45deg);
+        top: $spanpos;
       }
     }
   }
